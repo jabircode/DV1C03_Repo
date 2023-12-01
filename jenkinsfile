@@ -15,10 +15,12 @@ pipeline {
         
         stage('S2 6509183p') {
             steps {
-                script {
-                    sh 'docker stop WebApp_6509183p || true && docker rm WebApp_6509183p || true'   
-                    sh 'docker run -d -p 31200:80 --name WebApp_6509183p wb1_image_6509183P'
-                }
+                // script {
+                //     sh 'docker stop WebApp_6509183p || true && docker rm WebApp_6509183p || true'   
+                //     sh 'docker run -d -p 31200:80 --name WebApp_6509183p wb1_image_6509183P'
+                // }
+                echo 'docker stop WebApp_6509183p || true && docker rm WebApp_6509183p || true' 
+                echo 'docker run -d -p 31200:80 --name WebApp_6509183p wb1_image_6509183P'
                 echo 'Stage2_6509183p : Release Container WebApp_6509183p Created Completed'
             }
         }
